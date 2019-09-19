@@ -30,7 +30,7 @@ These replacement classes aren't required to have any methods available on them;
 
 ## PHP core extensions 
 
-*insert list of php core extensions that need work here*.
+* **sysvshm** - [WIP PR#3235](https://github.com/php/php-src/pull/3235)
 
 
 ## PHP external extensions

@@ -18,6 +18,12 @@ It would be an improvement to PHP if the resource type was removed, by replacing
 
 These replacement classes aren't required to have any methods available on them; it would be fine for them to just be used to define specific types, and isn't required to make them use inheritance.
 
+## BC Impact
+
+The backwards compatibility breaks from the conversion of the resource type to object is considered minimal,
+as the BC breaks are limited to code using the ``is_resource()`` and ``get_resource_type()`` functions.
+This is due that a resource is produced as a return value from a function and passed as a parameter to all relevant functions.
+This means that these changes can occur in between minor version as can be seens with the resource to object migration for the Hash extension in PHP 7.2. [1]
 
 # General plan
 
@@ -40,3 +46,7 @@ These replacement classes aren't required to have any methods available on them;
 ## PHP external extensions
 
 *insert list of known non-core extensions that need work here.*
+
+# References
+
+[1] https://www.php.net/manual/en/migration72.incompatible.php#migration72.incompatible.hash-ext-to-objects
